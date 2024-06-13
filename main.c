@@ -76,9 +76,15 @@ void i2c_master_stop(void);
 void i2c_master_ack(int val);
 void bme_280_setup(void);
 void lecture_chip_id(void);
-
+unsigned char lecture(unsigned char adresse);
 void lec_acc(unsigned char data[]);
+
 int a;
+unsigned char data1 = 0 ;
+unsigned char data2 = 0 ;
+unsigned char data3 = 0 ;
+
+
 void i2c_master_setup(void)
 {
 I2C1BRG = 390; // I2CBRG = [1/(2*Fsck) - PGD]*Pblck - 2
@@ -137,31 +143,32 @@ while(I2C1CONbits.PEN) { ; } // wait for STOP to complete
 
 void lec_acc(unsigned char data[]) 
 {
+
    i2c_master_start();
         i2c_master_send(SLAVE_ADDR << 1); // send the slave address, left shifted by 1,
         
-        i2c_master_send(0xF7); // bit 7 of adress register must be @1 for transmitting several bytes
+        i2c_master_send(0xFA); // bit 7 of adress register must be @1 for transmitting several bytes
        // i2c_master_send(master_write1); // send another byte to the slave
         
         i2c_master_restart();
         i2c_master_send((SLAVE_ADDR << 1) | 1); // send slave address, left shifted by 1
 
-        data[0]= i2c_master_recv(); // receive a byte from the bus
+        data1 = i2c_master_recv(); // receive a byte from the bus
         i2c_master_ack(0); // send ACK (0): master wants another byte!
         
-        data[1] = i2c_master_recv(); // receive a byte from the bus
+        data2 = i2c_master_recv(); // receive a byte from the bus
         i2c_master_ack(0); // send ACK (0): master wants another byte!
         
-        data[2] = i2c_master_recv(); // receive a byte from the bus
-        i2c_master_ack(0); // send ACK (0): master wants another byte!
+        data3 = i2c_master_recv(); // receive a byte from the bus
+        //i2c_master_ack(0); // send ACK (0): master wants another byte!
         
-        data[3] = i2c_master_recv(); // receive a byte from the bus
-        i2c_master_ack(0); // send ACK (0): master wants another byte!
+        //data[3] = i2c_master_recv(); // receive a byte from the bus
+        //i2c_master_ack(0); // send ACK (0): master wants another byte!
         
-        data[4]= i2c_master_recv(); // receive a byte from the bus
-        i2c_master_ack(0); // send ACK (0): master wants another byte!
+        //data[4]= i2c_master_recv(); // receive a byte from the bus
+        //i2c_master_ack(0); // send ACK (0): master wants another byte!
         
-        data[5]= i2c_master_recv(); // receive a byte from the bus
+        //data[5]= i2c_master_recv(); // receive a byte from the bus
      
         i2c_master_ack(1); // send NACK (1): master needs no more bytes
         i2c_master_stop(); // send STOP: end transmission, give up bus  
@@ -192,6 +199,46 @@ void lecture_chip_id(void){
     i2c_master_stop();
     
 }
+
+unsigned char lecture(unsigned char adresse){
+    unsigned char data = 0 ;
+    i2c_master_start();
+    i2c_master_send(SLAVE_ADDR << 1); // send the slave address, left shifted by 1,
+    i2c_master_send(adresse); // bit 7 of adress register must be @1 for transmitting several bytes
+    i2c_master_restart();
+    i2c_master_send((SLAVE_ADDR << 1) | 1); // send slave address, left shifted by 1 
+    data = i2c_master_recv();
+    i2c_master_ack(1); // send NACK (1): master needs no more bytes
+    i2c_master_stop(); // send STOP: end transmission, give up bus  
+    return data;
+}
+
+long BME280_compensate(long adc_T) {
+        long var1, var2, T;
+    unsigned short dig_T1 = 0, t_fine = 0;
+    signed short dig_T2 = 0, dig_T3 = 0;
+    unsigned char dig_T_0 = 0;
+    unsigned char dig_T_8 = 0;
+
+    dig_T_0 = lecture(0x88);
+    dig_T_8 = lecture(0x89);
+    dig_T1 = (dig_T_8 << 8) | dig_T_0;
+
+    dig_T_0 = lecture(0x8A);
+    dig_T_8 = lecture(0x8B);
+    dig_T2 = (dig_T_8 << 8) | dig_T_0;
+
+    dig_T_0 = lecture(0x8C);
+    dig_T_8 = lecture(0x8D);
+    dig_T3 = (dig_T_8 << 8) | dig_T_0;
+
+    var1 = ((((adc_T >> 3) - ((long)dig_T1 << 1))) * ((long)dig_T2)) >> 11;
+    var2 = (((((adc_T >> 4) - ((long)dig_T1)) * ((adc_T >> 4) - ((long)dig_T1))) >> 12) * ((long)dig_T3)) >> 14;
+    t_fine = var1 + var2;
+    T = (t_fine * 5 + 128) >> 8;
+    return T; 
+}
+
 void main ()
 {
 
@@ -201,6 +248,7 @@ unsigned char master_write0 = 0x0F; // first byte that master writes
 unsigned char master_read0 =0x00;// byte received
 unsigned char data[8] = {0} ;
 unsigned char pressure = 0;
+int temperature = 0;
 
 i2c_master_setup();
 
@@ -210,8 +258,9 @@ lecture_chip_id();
 while(1)
     {  
     lec_acc(data);
-    pressure = (data[0]<<12 | data[1]<<4 | data[2]>>4); 
+    long raw_temp = ((unsigned long)data1 << 12) | ((unsigned long)data2 << 4) | ((data3 >> 4) & 0x0F);
+    temperature = BME280_compensate(raw_temp);
     }
 
 } 
- 
+

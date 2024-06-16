@@ -1,27 +1,27 @@
 Archive member included to satisfy reference by file (symbol)
 
 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-bootstrap-exception-handler.o)
-                              C:\Users\Asimov\AppData\Local\Temp\ccEptJ6r.o (_bootstrap_exception_handler)
+                              C:\Users\Asimov\AppData\Local\Temp\ccggAZfE.o (_bootstrap_exception_handler)
 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-on-reset.o)
-                              C:\Users\Asimov\AppData\Local\Temp\ccEptJ6r.o (_on_reset)
+                              C:\Users\Asimov\AppData\Local\Temp\ccggAZfE.o (_on_reset)
 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-on-bootstrap.o)
-                              C:\Users\Asimov\AppData\Local\Temp\ccEptJ6r.o (_on_bootstrap)
+                              C:\Users\Asimov\AppData\Local\Temp\ccggAZfE.o (_on_bootstrap)
 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-nmi-handler.o)
-                              C:\Users\Asimov\AppData\Local\Temp\ccEptJ6r.o (_nmi_handler)
+                              C:\Users\Asimov\AppData\Local\Temp\ccggAZfE.o (_nmi_handler)
 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(pic32_data_init_core.o)
-                              C:\Users\Asimov\AppData\Local\Temp\ccEptJ6r.o (__pic32_data_init)
+                              C:\Users\Asimov\AppData\Local\Temp\ccggAZfE.o (__pic32_data_init)
 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(pic32_init_cache.o)
-                              C:\Users\Asimov\AppData\Local\Temp\ccEptJ6r.o (__pic32_init_cache)
+                              C:\Users\Asimov\AppData\Local\Temp\ccggAZfE.o (__pic32_init_cache)
 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(pic32_init_tlb_ebi_sqi.o)
-                              C:\Users\Asimov\AppData\Local\Temp\ccEptJ6r.o (__pic32_tlb_init_ebi_sqi)
+                              C:\Users\Asimov\AppData\Local\Temp\ccggAZfE.o (__pic32_tlb_init_ebi_sqi)
 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(general-exception.o)
-                              C:\Users\Asimov\AppData\Local\Temp\ccEptJ6r.o (_general_exception_context)
+                              C:\Users\Asimov\AppData\Local\Temp\ccggAZfE.o (_general_exception_context)
 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(cache-err-exception.o)
-                              C:\Users\Asimov\AppData\Local\Temp\ccEptJ6r.o (_cache_err_exception_context)
+                              C:\Users\Asimov\AppData\Local\Temp\ccggAZfE.o (_cache_err_exception_context)
 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(simple-tlb-refill-exception.o)
-                              C:\Users\Asimov\AppData\Local\Temp\ccEptJ6r.o (_simple_tlb_refill_exception_context)
+                              C:\Users\Asimov\AppData\Local\Temp\ccggAZfE.o (_simple_tlb_refill_exception_context)
 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(defaultinterrupt.o)
-                              C:\Users\Asimov\AppData\Local\Temp\ccWRShP1.o (_DefaultInterrupt)
+                              C:\Users\Asimov\AppData\Local\Temp\ccjsJokx.o (_DefaultInterrupt)
 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-general-exception-handler.o)
                               c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(general-exception.o) (_general_exception_handler)
 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-cache-err-exception-handler.o)
@@ -53,20 +53,21 @@ section                    address  length [bytes]      (dec)  Description
 .text                   0x9d0001d8           0x20          32  App's exec code 
 .text._on_reset         0x9d0001f8            0x8           8   
 .vectors                0x9d000200           0x48          72   
-.text                   0x9d000248          0x710        1808  App's exec code 
-.dinit                  0x9d000958          0x3d0         976   
-.text._cache_err_except 0x9d000d28           0xd8         216   
-.text.simple_tlb_refill 0x9d000e00           0xd8         216   
-.tlb.__pic32_tlb_init_e 0x9d000ed8           0xbc         188   
-.text                   0x9d000f94           0x7c         124  App's exec code 
-.text._general_exceptio 0x9d001010           0x48          72   
-.text._cache_err_except 0x9d001058           0x48          72   
-.text._simple_tlb_refil 0x9d0010a0           0x48          72   
-.text                   0x9d0010e8           0x44          68  App's exec code 
-.text                   0x9d00112c           0x30          48  App's exec code 
-.text.__exception_handl 0x9d00115c            0xc          12   
-.text._on_bootstrap     0x9d001168            0x8           8   
-      Total kseg0_program_mem used  :      0x116c        4460  0.2% of 0x200000
+.text                   0x9d000248          0xf20        3872  App's exec code 
+.dinit                  0x9d001168          0x3d0         976   
+.text._cache_err_except 0x9d001538           0xd8         216   
+.text.simple_tlb_refill 0x9d001610           0xd8         216   
+.rodata                 0x9d0016e8           0xc8         200  Read-only const 
+.tlb.__pic32_tlb_init_e 0x9d0017b0           0xbc         188   
+.text                   0x9d00186c           0x7c         124  App's exec code 
+.text._general_exceptio 0x9d0018e8           0x48          72   
+.text._cache_err_except 0x9d001930           0x48          72   
+.text._simple_tlb_refil 0x9d001978           0x48          72   
+.text                   0x9d0019c0           0x44          68  App's exec code 
+.text                   0x9d001a04           0x30          48  App's exec code 
+.text.__exception_handl 0x9d001a34            0xc          12   
+.text._on_bootstrap     0x9d001a40            0x8           8   
+      Total kseg0_program_mem used  :      0x1a44        6724  0.3% of 0x200000
 
 kseg0 Boot-Memory Usage
 section                    address  length [bytes]      (dec)  Description
@@ -80,7 +81,7 @@ section                    address  length [bytes]      (dec)  Description
 .bev_excpt              0xbfc00380           0x10          16  BEV-Exception 
          Total kseg1_boot_mem used  :       0x1d4         468  40.6% of 0x480
         --------------------------------------------------------------------------
-         Total Program Memory used  :      0x1340        4928  0.2% of 0x200480
+         Total Program Memory used  :      0x1c18        7192  0.3% of 0x200480
         --------------------------------------------------------------------------
 
 
@@ -89,9 +90,9 @@ section                    address  length [bytes]      (dec)  Description
 -------                 ----------  -------------------------  -----------
 reserve_data_0_kseg0    0x80000000          0x380         896   
 .sdata                  0x80000380           0x24          36  Small init data 
-.sbss                   0x800003a4            0x8           8  Small uninit data 
+.sbss                   0x800003a4           0x34          52  Small uninit data 
 reserve_data_0_kseg1    0xa0000000          0x380         896   
-         Total kseg0/kseg1 data_mem used  :       0x72c        1836  0.4% of 0x80000
+         Total kseg0/kseg1 data_mem used  :       0x758        1880  0.4% of 0x80000
 
 Data-Memory Usage
 section                    address  length [bytes]      (dec)  Description
@@ -100,15 +101,15 @@ reserve_data_0_kseg0    0x80000000          0x380         896
 reserve_data_0_kseg1    0xa0000000          0x380         896   
          Total kseg0/kseg1 data_mem used  :       0x700        1792  200.0% of 0x380
         --------------------------------------------------------------------------
-            Total Data Memory used  :       0xe2c        3628  0.7% of 0x80380
+            Total Data Memory used  :       0xe58        3672  0.7% of 0x80380
         --------------------------------------------------------------------------
 
 
 Dynamic Data-Memory Reservation
 section                    address  length [bytes]      (dec)  Description
 -------                 ----------  -------------------------  -----------
-heap                    0x800003b0           0x10          16  Reserved for heap 
-stack                   0x800003d8        0x7fc18      523288  Reserved for stack 
+heap                    0x800003e0           0x10          16  Reserved for heap 
+stack                   0x80000408        0x7fbf0      523248  Reserved for stack 
 
         --------------------------------------------------------------------------
 
@@ -117,10 +118,10 @@ Microchip PIC32 Memory-Usage Report By Module
 
         text        data         bss         dec         hex    basename                                         filename
 --------------------------------------------------------------------------------
-        1832           0           7        1839         72f    main.o                                       build/default/debug/main.o
+        4096           0          52        4148        1034    main.o                                       build/default/debug/main.o
          976           0           0         976         3d0    data_init                                    data_init
-           0         824           0         824         338    ccu05tT3.o                                   C:\Users\Asimov\AppData\Local\Temp\ccu05tT3.o
-         600           0           0         600         258    ccEptJ6r.o                                   C:\Users\Asimov\AppData\Local\Temp\ccEptJ6r.o
+           0         824           0         824         338    ccIHd7Cv.o                                   C:\Users\Asimov\AppData\Local\Temp\ccIHd7Cv.o
+         600           0           0         600         258    ccggAZfE.o                                   C:\Users\Asimov\AppData\Local\Temp\ccggAZfE.o
          536          36           0         572         23c    pic32_init_cache.o                           libpic32.a
          220           0           0         220          dc    general-exception.o                          libpic32.a
          216           0           0         216          d8    simple-tlb-refill-exception.o                libpic32.a
@@ -140,9 +141,8 @@ Microchip PIC32 Memory-Usage Report By Module
            8           0           0           8           8    default-on-reset.o                           libpic32.a
            8           0           0           8           8    default-on-bootstrap.o                       libpic32.a
           96           0        1792        1888         760    misc                                         misc
-           0           0           0           1           1    padding                                      padding
 --------------------------------------------------------------------------------
-        5584         860        1799        8244        2034    dist/default/debug/IF1-3GEA-LAURENT-MOURGUE.X.debug.elf
+        7848         860        1844       10552        2938    dist/default/debug/IF1-3GEA-LAURENT-MOURGUE.X.debug.elf
 
 
 Discarded input sections
@@ -154,19 +154,19 @@ Discarded input sections
  .reginfo       0x0000000000000000       0x18 build/default/debug/main.o
  .MIPS.abiflags
                 0x0000000000000000       0x18 build/default/debug/main.o
- .reginfo       0x0000000000000000       0x18 C:\Users\Asimov\AppData\Local\Temp\ccEptJ6r.o
+ .reginfo       0x0000000000000000       0x18 C:\Users\Asimov\AppData\Local\Temp\ccggAZfE.o
  .MIPS.abiflags
-                0x0000000000000000       0x18 C:\Users\Asimov\AppData\Local\Temp\ccEptJ6r.o
- .reginfo       0x0000000000000000       0x18 C:\Users\Asimov\AppData\Local\Temp\cc8D5BQd.o
+                0x0000000000000000       0x18 C:\Users\Asimov\AppData\Local\Temp\ccggAZfE.o
+ .reginfo       0x0000000000000000       0x18 C:\Users\Asimov\AppData\Local\Temp\cctaLUhy.o
  .MIPS.abiflags
-                0x0000000000000000       0x18 C:\Users\Asimov\AppData\Local\Temp\cc8D5BQd.o
- .reginfo       0x0000000000000000       0x18 C:\Users\Asimov\AppData\Local\Temp\ccu05tT3.o
+                0x0000000000000000       0x18 C:\Users\Asimov\AppData\Local\Temp\cctaLUhy.o
+ .reginfo       0x0000000000000000       0x18 C:\Users\Asimov\AppData\Local\Temp\ccIHd7Cv.o
  .MIPS.abiflags
-                0x0000000000000000       0x18 C:\Users\Asimov\AppData\Local\Temp\ccu05tT3.o
- .reginfo       0x0000000000000000       0x18 C:\Users\Asimov\AppData\Local\Temp\ccWRShP1.o
+                0x0000000000000000       0x18 C:\Users\Asimov\AppData\Local\Temp\ccIHd7Cv.o
+ .reginfo       0x0000000000000000       0x18 C:\Users\Asimov\AppData\Local\Temp\ccjsJokx.o
  .MIPS.abiflags
-                0x0000000000000000       0x18 C:\Users\Asimov\AppData\Local\Temp\ccWRShP1.o
- .discard       0x0000000000000000        0x4 C:\Users\Asimov\AppData\Local\Temp\ccWRShP1.o
+                0x0000000000000000       0x18 C:\Users\Asimov\AppData\Local\Temp\ccjsJokx.o
+ .discard       0x0000000000000000        0x4 C:\Users\Asimov\AppData\Local\Temp\ccjsJokx.o
  .reginfo       0x0000000000000000       0x18 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\pic32_software_reset.o
  .MIPS.abiflags
                 0x0000000000000000       0x18 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\pic32_software_reset.o
@@ -476,10 +476,10 @@ LOAD build/default/debug/main.o
                 0x0000000000000001                __MPLAB_BUILD = 0x1
                 0x0000000000000001                __MPLAB_DEBUG = 0x1
                 0x0000000000000001                __DEBUG = 0x1
-LOAD C:\Users\Asimov\AppData\Local\Temp\ccEptJ6r.o
-LOAD C:\Users\Asimov\AppData\Local\Temp\cc8D5BQd.o
-LOAD C:\Users\Asimov\AppData\Local\Temp\ccu05tT3.o
-LOAD C:\Users\Asimov\AppData\Local\Temp\ccWRShP1.o
+LOAD C:\Users\Asimov\AppData\Local\Temp\ccggAZfE.o
+LOAD C:\Users\Asimov\AppData\Local\Temp\cctaLUhy.o
+LOAD C:\Users\Asimov\AppData\Local\Temp\ccIHd7Cv.o
+LOAD C:\Users\Asimov\AppData\Local\Temp\ccjsJokx.o
 LOAD c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\pic32_software_reset.o
 LOAD c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/fpu64\libgcc.a
 START GROUP
@@ -940,16 +940,16 @@ END GROUP
 
 .reset          0x00000000bfc00000      0x1c4
  *(.reset)
- .reset         0x00000000bfc00000       0x18 C:\Users\Asimov\AppData\Local\Temp\ccEptJ6r.o
+ .reset         0x00000000bfc00000       0x18 C:\Users\Asimov\AppData\Local\Temp\ccggAZfE.o
                 0x00000000bfc00000                _reset
  *(.reset.startup)
  .reset.startup
-                0x00000000bfc00018      0x1ac C:\Users\Asimov\AppData\Local\Temp\ccEptJ6r.o
+                0x00000000bfc00018      0x1ac C:\Users\Asimov\AppData\Local\Temp\ccggAZfE.o
                 0x00000000bfc00018                _startup
 
 .bev_excpt      0x00000000bfc00380       0x10
  *(.bev_handler)
- .bev_handler   0x00000000bfc00380       0x10 C:\Users\Asimov\AppData\Local\Temp\ccEptJ6r.o
+ .bev_handler   0x00000000bfc00380       0x10 C:\Users\Asimov\AppData\Local\Temp\ccggAZfE.o
 
 .cache_init     0x00000000bfc004b0      0x218
  *(.cache_init)
@@ -967,17 +967,17 @@ END GROUP
                 0x000000009d000000       0x10
  *(.simple_tlb_refill_vector)
  .simple_tlb_refill_vector
-                0x000000009d000000       0x10 C:\Users\Asimov\AppData\Local\Temp\ccEptJ6r.o
+                0x000000009d000000       0x10 C:\Users\Asimov\AppData\Local\Temp\ccggAZfE.o
 
 .cache_err_excpt
                 0x000000009d000100       0x10
  *(.cache_err_vector)
  .cache_err_vector
-                0x000000009d000100       0x10 C:\Users\Asimov\AppData\Local\Temp\ccEptJ6r.o
+                0x000000009d000100       0x10 C:\Users\Asimov\AppData\Local\Temp\ccggAZfE.o
 
 .app_excpt      0x000000009d000180       0x10
  *(.gen_handler)
- .gen_handler   0x000000009d000180       0x10 C:\Users\Asimov\AppData\Local\Temp\ccEptJ6r.o
+ .gen_handler   0x000000009d000180       0x10 C:\Users\Asimov\AppData\Local\Temp\ccggAZfE.o
 
 .vectors        0x000000009d000200       0x48
                 0x000000009d000200                . = ALIGN (0x4)
@@ -1899,27 +1899,50 @@ END GROUP
                 0x00000000800003a4                _data_end = .
                 0x00000000800003a4                _bss_begin = .
 
-.sbss           0x00000000800003a4        0x8
+.sbss           0x00000000800003a4       0x34
                 0x00000000800003a4                _sbss_begin = .
  *(.dynsbss)
  *(.sbss .sbss.* .gnu.linkonce.sb.*)
- .sbss          0x00000000800003a4        0x7 build/default/debug/main.o
+ .sbss          0x00000000800003a4       0x34 build/default/debug/main.o
                 0x00000000800003a4                a
                 0x00000000800003a8                data1
                 0x00000000800003a9                data2
                 0x00000000800003aa                data3
+                0x00000000800003ab                data4
+                0x00000000800003ac                data5
+                0x00000000800003ad                data6
+                0x00000000800003ae                data7
+                0x00000000800003af                data8
+                0x00000000800003b0                dig_T1
+                0x00000000800003b2                dig_T2
+                0x00000000800003b4                dig_T3
+                0x00000000800003b6                dig_P1
+                0x00000000800003b8                dig_P2
+                0x00000000800003ba                dig_P3
+                0x00000000800003bc                dig_P4
+                0x00000000800003be                dig_P5
+                0x00000000800003c0                dig_P6
+                0x00000000800003c2                dig_P7
+                0x00000000800003c4                dig_P8
+                0x00000000800003c6                dig_P9
+                0x00000000800003c8                dig_H1
+                0x00000000800003ca                dig_H2
+                0x00000000800003cc                dig_H3
+                0x00000000800003ce                dig_H4
+                0x00000000800003d0                dig_H5
+                0x00000000800003d2                dig_H6
+                0x00000000800003d4                t_fine
  *(.scommon)
-                0x00000000800003ab                _sbss_end = .
-                0x00000000800003ac                . = ALIGN (0x4)
- *fill*         0x00000000800003ab        0x1 
+                0x00000000800003d8                _sbss_end = .
+                0x00000000800003d8                . = ALIGN (0x4)
 
-.bss            0x00000000800003ac        0x0
+.bss            0x00000000800003d8        0x0
  *(.dynbss)
  *(COMMON)
-                0x00000000800003ac                . = ALIGN ((. != 0x0)?0x4:0x1)
-                0x00000000800003ac                . = ALIGN (0x4)
-                0x00000000800003ac                _end = .
-                0x00000000800003ac                _bss_end = .
+                0x00000000800003d8                . = ALIGN ((. != 0x0)?0x4:0x1)
+                0x00000000800003d8                . = ALIGN (0x4)
+                0x00000000800003d8                _end = .
+                0x00000000800003d8                _bss_end = .
                 0x0000000000080000                _bmxdudba_address = LENGTH (kseg0_data_mem)
                 0x0000000000080000                _bmxdupba_address = LENGTH (kseg0_data_mem)
 
@@ -2028,7 +2051,7 @@ END GROUP
  .debug_aranges
                 0x0000000000000020       0x20 build/default/debug/main.o
  .debug_aranges
-                0x0000000000000040       0x50 C:\Users\Asimov\AppData\Local\Temp\ccEptJ6r.o
+                0x0000000000000040       0x50 C:\Users\Asimov\AppData\Local\Temp\ccggAZfE.o
  .debug_aranges
                 0x0000000000000090       0x20 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-bootstrap-exception-handler.o)
  .debug_aranges
@@ -2048,83 +2071,83 @@ END GROUP
  *.elf(.debug_pubnames)
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000      0xc6f
+.debug_info     0x0000000000000000      0xf81
  *.elf(.debug_info .gnu.linkonce.wi.*)
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000       0x3f c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\software-debug-break.o
- .debug_info    0x000000000000003f      0xa4c build/default/debug/main.o
- .debug_info    0x0000000000000a8b       0x22 C:\Users\Asimov\AppData\Local\Temp\ccEptJ6r.o
- .debug_info    0x0000000000000aad       0x41 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-bootstrap-exception-handler.o)
- .debug_info    0x0000000000000aee       0x3f c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-on-reset.o)
- .debug_info    0x0000000000000b2d       0x3f c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-on-bootstrap.o)
- .debug_info    0x0000000000000b6c       0x40 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(defaultinterrupt.o)
- .debug_info    0x0000000000000bac       0x41 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-general-exception-handler.o)
- .debug_info    0x0000000000000bed       0x41 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-cache-err-exception-handler.o)
- .debug_info    0x0000000000000c2e       0x41 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-simple-tlb-refill-exception-handler.o)
+ .debug_info    0x000000000000003f      0xd5e build/default/debug/main.o
+ .debug_info    0x0000000000000d9d       0x22 C:\Users\Asimov\AppData\Local\Temp\ccggAZfE.o
+ .debug_info    0x0000000000000dbf       0x41 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_info    0x0000000000000e00       0x3f c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-on-reset.o)
+ .debug_info    0x0000000000000e3f       0x3f c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-on-bootstrap.o)
+ .debug_info    0x0000000000000e7e       0x40 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(defaultinterrupt.o)
+ .debug_info    0x0000000000000ebe       0x41 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-general-exception-handler.o)
+ .debug_info    0x0000000000000eff       0x41 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-cache-err-exception-handler.o)
+ .debug_info    0x0000000000000f40       0x41 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-simple-tlb-refill-exception-handler.o)
 
-.debug_abbrev   0x0000000000000000      0x3ac
+.debug_abbrev   0x0000000000000000      0x415
  *.elf(.debug_abbrev)
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000       0x2e c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\software-debug-break.o
- .debug_abbrev  0x000000000000002e      0x21b build/default/debug/main.o
- .debug_abbrev  0x0000000000000249       0x12 C:\Users\Asimov\AppData\Local\Temp\ccEptJ6r.o
- .debug_abbrev  0x000000000000025b       0x31 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-bootstrap-exception-handler.o)
- .debug_abbrev  0x000000000000028c       0x2e c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-on-reset.o)
- .debug_abbrev  0x00000000000002ba       0x2e c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-on-bootstrap.o)
- .debug_abbrev  0x00000000000002e8       0x31 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(defaultinterrupt.o)
- .debug_abbrev  0x0000000000000319       0x31 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-general-exception-handler.o)
- .debug_abbrev  0x000000000000034a       0x31 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-cache-err-exception-handler.o)
- .debug_abbrev  0x000000000000037b       0x31 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-simple-tlb-refill-exception-handler.o)
+ .debug_abbrev  0x000000000000002e      0x284 build/default/debug/main.o
+ .debug_abbrev  0x00000000000002b2       0x12 C:\Users\Asimov\AppData\Local\Temp\ccggAZfE.o
+ .debug_abbrev  0x00000000000002c4       0x31 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_abbrev  0x00000000000002f5       0x2e c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-on-reset.o)
+ .debug_abbrev  0x0000000000000323       0x2e c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-on-bootstrap.o)
+ .debug_abbrev  0x0000000000000351       0x31 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(defaultinterrupt.o)
+ .debug_abbrev  0x0000000000000382       0x31 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-general-exception-handler.o)
+ .debug_abbrev  0x00000000000003b3       0x31 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-cache-err-exception-handler.o)
+ .debug_abbrev  0x00000000000003e4       0x31 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-simple-tlb-refill-exception-handler.o)
 
-.debug_line     0x0000000000000000      0xa56
+.debug_line     0x0000000000000000      0xcca
  *.elf(.debug_line)
  *(.debug_line)
  .debug_line    0x0000000000000000       0xb0 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\software-debug-break.o
- .debug_line    0x00000000000000b0      0x2e9 build/default/debug/main.o
- .debug_line    0x0000000000000399      0x17d C:\Users\Asimov\AppData\Local\Temp\ccEptJ6r.o
- .debug_line    0x0000000000000516       0xc9 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-bootstrap-exception-handler.o)
- .debug_line    0x00000000000005df       0xa5 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-on-reset.o)
- .debug_line    0x0000000000000684       0xa9 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-on-bootstrap.o)
- .debug_line    0x000000000000072d       0xc8 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(defaultinterrupt.o)
- .debug_line    0x00000000000007f5       0xc7 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-general-exception-handler.o)
- .debug_line    0x00000000000008bc       0xc9 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-cache-err-exception-handler.o)
- .debug_line    0x0000000000000985       0xd1 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-simple-tlb-refill-exception-handler.o)
+ .debug_line    0x00000000000000b0      0x55d build/default/debug/main.o
+ .debug_line    0x000000000000060d      0x17d C:\Users\Asimov\AppData\Local\Temp\ccggAZfE.o
+ .debug_line    0x000000000000078a       0xc9 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_line    0x0000000000000853       0xa5 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-on-reset.o)
+ .debug_line    0x00000000000008f8       0xa9 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-on-bootstrap.o)
+ .debug_line    0x00000000000009a1       0xc8 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(defaultinterrupt.o)
+ .debug_line    0x0000000000000a69       0xc7 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-general-exception-handler.o)
+ .debug_line    0x0000000000000b30       0xc9 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-cache-err-exception-handler.o)
+ .debug_line    0x0000000000000bf9       0xd1 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-simple-tlb-refill-exception-handler.o)
 
-.debug_frame    0x0000000000000000      0x2f0
+.debug_frame    0x0000000000000000      0x360
  *.elf(.debug_frame)
  *(.debug_frame)
  .debug_frame   0x0000000000000000       0x20 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\software-debug-break.o
- .debug_frame   0x0000000000000020      0x1c0 build/default/debug/main.o
- .debug_frame   0x00000000000001e0       0x2c c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-bootstrap-exception-handler.o)
- .debug_frame   0x000000000000020c       0x20 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-on-reset.o)
- .debug_frame   0x000000000000022c       0x20 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-on-bootstrap.o)
- .debug_frame   0x000000000000024c       0x20 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(defaultinterrupt.o)
- .debug_frame   0x000000000000026c       0x2c c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-general-exception-handler.o)
- .debug_frame   0x0000000000000298       0x2c c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-cache-err-exception-handler.o)
- .debug_frame   0x00000000000002c4       0x2c c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-simple-tlb-refill-exception-handler.o)
+ .debug_frame   0x0000000000000020      0x230 build/default/debug/main.o
+ .debug_frame   0x0000000000000250       0x2c c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_frame   0x000000000000027c       0x20 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-on-reset.o)
+ .debug_frame   0x000000000000029c       0x20 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-on-bootstrap.o)
+ .debug_frame   0x00000000000002bc       0x20 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(defaultinterrupt.o)
+ .debug_frame   0x00000000000002dc       0x2c c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-general-exception-handler.o)
+ .debug_frame   0x0000000000000308       0x2c c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-cache-err-exception-handler.o)
+ .debug_frame   0x0000000000000334       0x2c c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-simple-tlb-refill-exception-handler.o)
 
-.debug_str      0x0000000000000000     0x21d8
+.debug_str      0x0000000000000000     0x233f
  *.elf(.debug_str)
  *(.debug_str)
  .debug_str     0x0000000000000000      0x354 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\software-debug-break.o
- .debug_str     0x0000000000000354      0x661 build/default/debug/main.o
- .debug_str     0x00000000000009b5       0xab C:\Users\Asimov\AppData\Local\Temp\ccEptJ6r.o
- .debug_str     0x0000000000000a60      0x364 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-bootstrap-exception-handler.o)
- .debug_str     0x0000000000000dc4      0x33e c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-on-reset.o)
- .debug_str     0x0000000000001102      0x346 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-on-bootstrap.o)
- .debug_str     0x0000000000001448      0x358 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(defaultinterrupt.o)
- .debug_str     0x00000000000017a0      0x360 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-general-exception-handler.o)
- .debug_str     0x0000000000001b00      0x364 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-cache-err-exception-handler.o)
- .debug_str     0x0000000000001e64      0x374 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-simple-tlb-refill-exception-handler.o)
+ .debug_str     0x0000000000000354      0x7c8 build/default/debug/main.o
+ .debug_str     0x0000000000000b1c       0xab C:\Users\Asimov\AppData\Local\Temp\ccggAZfE.o
+ .debug_str     0x0000000000000bc7      0x364 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_str     0x0000000000000f2b      0x33e c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-on-reset.o)
+ .debug_str     0x0000000000001269      0x346 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-on-bootstrap.o)
+ .debug_str     0x00000000000015af      0x358 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(defaultinterrupt.o)
+ .debug_str     0x0000000000001907      0x360 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-general-exception-handler.o)
+ .debug_str     0x0000000000001c67      0x364 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-cache-err-exception-handler.o)
+ .debug_str     0x0000000000001fcb      0x374 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-simple-tlb-refill-exception-handler.o)
 
-.debug_loc      0x0000000000000000      0x40c
+.debug_loc      0x0000000000000000      0x4da
  *.elf(.debug_loc)
  *(.debug_loc)
- .debug_loc     0x0000000000000000      0x35c build/default/debug/main.o
- .debug_loc     0x000000000000035c       0x2c c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-bootstrap-exception-handler.o)
- .debug_loc     0x0000000000000388       0x2c c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-general-exception-handler.o)
- .debug_loc     0x00000000000003b4       0x2c c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-cache-err-exception-handler.o)
- .debug_loc     0x00000000000003e0       0x2c c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-simple-tlb-refill-exception-handler.o)
+ .debug_loc     0x0000000000000000      0x42a build/default/debug/main.o
+ .debug_loc     0x000000000000042a       0x2c c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_loc     0x0000000000000456       0x2c c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-general-exception-handler.o)
+ .debug_loc     0x0000000000000482       0x2c c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-cache-err-exception-handler.o)
+ .debug_loc     0x00000000000004ae       0x2c c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-simple-tlb-refill-exception-handler.o)
 
 .debug_macinfo
  *.elf(.debug_macinfo)
@@ -2154,7 +2177,7 @@ END GROUP
  *.elf(.debug_ranges)
  *(.debug_ranges)
  .debug_ranges  0x0000000000000000       0x10 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\software-debug-break.o
- .debug_ranges  0x0000000000000010       0x48 C:\Users\Asimov\AppData\Local\Temp\ccEptJ6r.o
+ .debug_ranges  0x0000000000000010       0x48 C:\Users\Asimov\AppData\Local\Temp\ccggAZfE.o
  .debug_ranges  0x0000000000000058       0x10 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-bootstrap-exception-handler.o)
  .debug_ranges  0x0000000000000068       0x10 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-on-reset.o)
  .debug_ranges  0x0000000000000078       0x10 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-on-bootstrap.o)
@@ -2171,13 +2194,13 @@ END GROUP
  .gnu.attributes
                 0x0000000000000010       0x10 build/default/debug/main.o
  .gnu.attributes
-                0x0000000000000020       0x10 C:\Users\Asimov\AppData\Local\Temp\ccEptJ6r.o
+                0x0000000000000020       0x10 C:\Users\Asimov\AppData\Local\Temp\ccggAZfE.o
  .gnu.attributes
-                0x0000000000000030       0x10 C:\Users\Asimov\AppData\Local\Temp\cc8D5BQd.o
+                0x0000000000000030       0x10 C:\Users\Asimov\AppData\Local\Temp\cctaLUhy.o
  .gnu.attributes
-                0x0000000000000040       0x10 C:\Users\Asimov\AppData\Local\Temp\ccu05tT3.o
+                0x0000000000000040       0x10 C:\Users\Asimov\AppData\Local\Temp\ccIHd7Cv.o
  .gnu.attributes
-                0x0000000000000050       0x10 C:\Users\Asimov\AppData\Local\Temp\ccWRShP1.o
+                0x0000000000000050       0x10 C:\Users\Asimov\AppData\Local\Temp\ccjsJokx.o
  .gnu.attributes
                 0x0000000000000060       0x10 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\pic32_software_reset.o
  .gnu.attributes
@@ -2288,43 +2311,43 @@ LOAD stack
 .reginfo        0x0000000000000000       0x18
  .reginfo       0x0000000000000000       0x18 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\software-debug-break.o
 
-.stack          0x00000000800003d8      0x400
- .stack         0x00000000800003d8      0x400 stack
+.stack          0x0000000080000408      0x400
+ .stack         0x0000000080000408      0x400 stack
 
 .__vector_offset_BF810540_data
                 0x00000000bf810540      0x1b0
  .__vector_offset_BF810540_data
-                0x00000000bf810540      0x1b0 C:\Users\Asimov\AppData\Local\Temp\ccu05tT3.o
+                0x00000000bf810540      0x1b0 C:\Users\Asimov\AppData\Local\Temp\ccIHd7Cv.o
 
 .__vector_offset_BF8106F4_data
                 0x00000000bf8106f4      0x148
  .__vector_offset_BF8106F4_data
-                0x00000000bf8106f4      0x148 C:\Users\Asimov\AppData\Local\Temp\ccu05tT3.o
+                0x00000000bf8106f4      0x148 C:\Users\Asimov\AppData\Local\Temp\ccIHd7Cv.o
 
 .__vector_offset_BF810874_data
                 0x00000000bf810874       0x18
  .__vector_offset_BF810874_data
-                0x00000000bf810874       0x18 C:\Users\Asimov\AppData\Local\Temp\ccu05tT3.o
+                0x00000000bf810874       0x18 C:\Users\Asimov\AppData\Local\Temp\ccIHd7Cv.o
 
 .__vector_offset_BF810858_data
                 0x00000000bf810858       0x14
  .__vector_offset_BF810858_data
-                0x00000000bf810858       0x14 C:\Users\Asimov\AppData\Local\Temp\ccu05tT3.o
+                0x00000000bf810858       0x14 C:\Users\Asimov\AppData\Local\Temp\ccIHd7Cv.o
 
 .__vector_offset_BF810840_data
                 0x00000000bf810840        0xc
  .__vector_offset_BF810840_data
-                0x00000000bf810840        0xc C:\Users\Asimov\AppData\Local\Temp\ccu05tT3.o
+                0x00000000bf810840        0xc C:\Users\Asimov\AppData\Local\Temp\ccIHd7Cv.o
 
 .__vector_offset_BF810850_data
                 0x00000000bf810850        0x4
  .__vector_offset_BF810850_data
-                0x00000000bf810850        0x4 C:\Users\Asimov\AppData\Local\Temp\ccu05tT3.o
+                0x00000000bf810850        0x4 C:\Users\Asimov\AppData\Local\Temp\ccIHd7Cv.o
 
 .__vector_offset_BF810894_data
                 0x00000000bf810894        0x4
  .__vector_offset_BF810894_data
-                0x00000000bf810894        0x4 C:\Users\Asimov\AppData\Local\Temp\ccu05tT3.o
+                0x00000000bf810894        0x4 C:\Users\Asimov\AppData\Local\Temp\ccIHd7Cv.o
 
 .data%z1        0x0000000000000000        0x0
  .data          0x0000000000000000        0x0 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(pic32_data_init_copy.o)
@@ -2378,16 +2401,16 @@ LOAD stack
  .data          0x0000000000000000        0x0 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\pic32_software_reset.o
 
 .data%z18       0x0000000000000000        0x0
- .data          0x0000000000000000        0x0 C:\Users\Asimov\AppData\Local\Temp\ccWRShP1.o
+ .data          0x0000000000000000        0x0 C:\Users\Asimov\AppData\Local\Temp\ccjsJokx.o
 
 .data%z19       0x0000000000000000        0x0
- .data          0x0000000000000000        0x0 C:\Users\Asimov\AppData\Local\Temp\ccu05tT3.o
+ .data          0x0000000000000000        0x0 C:\Users\Asimov\AppData\Local\Temp\ccIHd7Cv.o
 
 .data%z20       0x0000000000000000        0x0
- .data          0x0000000000000000        0x0 C:\Users\Asimov\AppData\Local\Temp\cc8D5BQd.o
+ .data          0x0000000000000000        0x0 C:\Users\Asimov\AppData\Local\Temp\cctaLUhy.o
 
 .data%z21       0x0000000000000000        0x0
- .data          0x0000000000000000        0x0 C:\Users\Asimov\AppData\Local\Temp\ccEptJ6r.o
+ .data          0x0000000000000000        0x0 C:\Users\Asimov\AppData\Local\Temp\ccggAZfE.o
 
 .data%z22       0x0000000000000000        0x0
  .data          0x0000000000000000        0x0 build/default/debug/main.o
@@ -2447,16 +2470,16 @@ LOAD stack
  .bss           0x0000000000000000        0x0 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\pic32_software_reset.o
 
 .bss%z41        0x0000000000000000        0x0
- .bss           0x0000000000000000        0x0 C:\Users\Asimov\AppData\Local\Temp\ccWRShP1.o
+ .bss           0x0000000000000000        0x0 C:\Users\Asimov\AppData\Local\Temp\ccjsJokx.o
 
 .bss%z42        0x0000000000000000        0x0
- .bss           0x0000000000000000        0x0 C:\Users\Asimov\AppData\Local\Temp\ccu05tT3.o
+ .bss           0x0000000000000000        0x0 C:\Users\Asimov\AppData\Local\Temp\ccIHd7Cv.o
 
 .bss%z43        0x0000000000000000        0x0
- .bss           0x0000000000000000        0x0 C:\Users\Asimov\AppData\Local\Temp\cc8D5BQd.o
+ .bss           0x0000000000000000        0x0 C:\Users\Asimov\AppData\Local\Temp\cctaLUhy.o
 
 .bss%z44        0x0000000000000000        0x0
- .bss           0x0000000000000000        0x0 C:\Users\Asimov\AppData\Local\Temp\ccEptJ6r.o
+ .bss           0x0000000000000000        0x0 C:\Users\Asimov\AppData\Local\Temp\ccggAZfE.o
 
 .bss%z45        0x0000000000000000        0x0
  .bss           0x0000000000000000        0x0 build/default/debug/main.o
@@ -2464,8 +2487,8 @@ LOAD stack
 .bss%z46        0x0000000000000000        0x0
  .bss           0x0000000000000000        0x0 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\software-debug-break.o
 
-.text           0x000000009d000248      0x710
- .text          0x000000009d000248      0x710 build/default/debug/main.o
+.text           0x000000009d000248      0xf20
+ .text          0x000000009d000248      0xf20 build/default/debug/main.o
                 0x000000009d000248                i2c_master_setup
                 0x000000009d00028c                i2c_master_start
                 0x000000009d0002e0                i2c_master_restart
@@ -2474,14 +2497,17 @@ LOAD stack
                 0x000000009d000408                i2c_master_ack
                 0x000000009d00047c                i2c_master_stop
                 0x000000009d0004d0                lec_acc
-                0x000000009d000584                bme_280_setup
-                0x000000009d0005fc                lecture_chip_id
-                0x000000009d000680                lecture
-                0x000000009d000710                BME280_compensate
-                0x000000009d0008a0                main
+                0x000000009d0005fc                bme_280_setup
+                0x000000009d000674                lecture_chip_id
+                0x000000009d0006f8                lecture
+                0x000000009d000788                read_compensation_parameters
+                0x000000009d000ad8                BME280_compensate_T_double
+                0x000000009d000c18                BME280_compensate_P_double
+                0x000000009d000e60                BME280_compensate_H_double
+                0x000000009d00102c                main
 
-.dinit          0x000000009d000958      0x3d0
- .dinit         0x000000009d000958      0x3d0 data_init
+.dinit          0x000000009d001168      0x3d0
+ .dinit         0x000000009d001168      0x3d0 data_init
 
 .text.general_exception
                 0x000000009d000010       0xdc
@@ -2490,34 +2516,37 @@ LOAD stack
                 0x000000009d000010                _general_exception_context
 
 .text._cache_err_exception_context
-                0x000000009d000d28       0xd8
+                0x000000009d001538       0xd8
  .text._cache_err_exception_context
-                0x000000009d000d28       0xd8 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(cache-err-exception.o)
-                0x000000009d000d28                _cache_err_exception_context
+                0x000000009d001538       0xd8 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(cache-err-exception.o)
+                0x000000009d001538                _cache_err_exception_context
 
 .text.simple_tlb_refill_context
-                0x000000009d000e00       0xd8
+                0x000000009d001610       0xd8
  .text.simple_tlb_refill_context
-                0x000000009d000e00       0xd8 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(simple-tlb-refill-exception.o)
-                0x000000009d000e00                _simple_tlb_refill_exception_context
+                0x000000009d001610       0xd8 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(simple-tlb-refill-exception.o)
+                0x000000009d001610                _simple_tlb_refill_exception_context
+
+.rodata         0x000000009d0016e8       0xc8
+ .rodata        0x000000009d0016e8       0xc8 build/default/debug/main.o
 
 .tlb.__pic32_tlb_init_ebi_sqi
-                0x000000009d000ed8       0xbc
+                0x000000009d0017b0       0xbc
  .tlb.__pic32_tlb_init_ebi_sqi
-                0x000000009d000ed8       0xbc c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(pic32_init_tlb_ebi_sqi.o)
-                0x000000009d000ed8                __pic32_tlb_init_ebi_sqi
+                0x000000009d0017b0       0xbc c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(pic32_init_tlb_ebi_sqi.o)
+                0x000000009d0017b0                __pic32_tlb_init_ebi_sqi
 
-.text           0x000000009d000f94       0x7c
- .text          0x000000009d000f94       0x7c c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(pic32_data_init_core.o)
-                0x000000009d000f94                __dinit_copy_val_data
-                0x000000009d000f94                __dinit_decompress
-                0x000000009d000f94                __dinit_copy_emb
-                0x000000009d000f9c                __pic32_data_init
+.text           0x000000009d00186c       0x7c
+ .text          0x000000009d00186c       0x7c c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(pic32_data_init_core.o)
+                0x000000009d00186c                __dinit_copy_val_data
+                0x000000009d00186c                __dinit_decompress
+                0x000000009d00186c                __dinit_copy_emb
+                0x000000009d001874                __pic32_data_init
 
 .text.main_entry
                 0x000000009d000110       0x54
  .text.main_entry
-                0x000000009d000110       0x54 C:\Users\Asimov\AppData\Local\Temp\ccEptJ6r.o
+                0x000000009d000110       0x54 C:\Users\Asimov\AppData\Local\Temp\ccggAZfE.o
                 0x000000009d000144                __crt0_exit
 
 .text._bootstrap_exception_handler
@@ -2527,26 +2556,26 @@ LOAD stack
                 0x000000009d000190                _bootstrap_exception_handler
 
 .text._general_exception_handler
-                0x000000009d001010       0x48
+                0x000000009d0018e8       0x48
  .text._general_exception_handler
-                0x000000009d001010       0x48 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-general-exception-handler.o)
-                0x000000009d001010                _general_exception_handler
+                0x000000009d0018e8       0x48 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-general-exception-handler.o)
+                0x000000009d0018e8                _general_exception_handler
 
 .text._cache_err_exception_handler
-                0x000000009d001058       0x48
+                0x000000009d001930       0x48
  .text._cache_err_exception_handler
-                0x000000009d001058       0x48 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-cache-err-exception-handler.o)
-                0x000000009d001058                _cache_err_exception_handler
+                0x000000009d001930       0x48 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-cache-err-exception-handler.o)
+                0x000000009d001930                _cache_err_exception_handler
 
 .text._simple_tlb_refill_exception_handler
-                0x000000009d0010a0       0x48
+                0x000000009d001978       0x48
  .text._simple_tlb_refill_exception_handler
-                0x000000009d0010a0       0x48 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-simple-tlb-refill-exception-handler.o)
-                0x000000009d0010a0                _simple_tlb_refill_exception_handler
+                0x000000009d001978       0x48 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-simple-tlb-refill-exception-handler.o)
+                0x000000009d001978                _simple_tlb_refill_exception_handler
 
-.text           0x000000009d0010e8       0x44
- .text          0x000000009d0010e8       0x44 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\pic32_software_reset.o
-                0x000000009d0010e8                __pic32_software_reset
+.text           0x000000009d0019c0       0x44
+ .text          0x000000009d0019c0       0x44 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\pic32_software_reset.o
+                0x000000009d0019c0                __pic32_software_reset
 
 .text           0x000000009d0001d8       0x20
  .text          0x000000009d0001d8       0x20 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(pic32_data_init_copy.o)
@@ -2557,21 +2586,21 @@ LOAD stack
  .MIPS.abiflags
                 0x000000009d000168       0x18 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\software-debug-break.o
 
-.text           0x000000009d00112c       0x30
- .text          0x000000009d00112c       0x18 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-nmi-handler.o)
-                0x000000009d00112c                _nmi_handler
- .text          0x000000009d001144       0x18 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(pic32_data_init_clear.o)
-                0x000000009d001144                __dinit_clear_needed
-                0x000000009d001144                __dinit_clear
+.text           0x000000009d001a04       0x30
+ .text          0x000000009d001a04       0x18 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-nmi-handler.o)
+                0x000000009d001a04                _nmi_handler
+ .text          0x000000009d001a1c       0x18 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(pic32_data_init_clear.o)
+                0x000000009d001a1c                __dinit_clear_needed
+                0x000000009d001a1c                __dinit_clear
 
 .rodata         0x000000009d0000ec       0x14
  .rodata        0x000000009d0000ec       0x14 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(pic32_data_init_core.o)
 
 .text.__exception_handler_break
-                0x000000009d00115c        0xc
+                0x000000009d001a34        0xc
  .text.__exception_handler_break
-                0x000000009d00115c        0xc c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\software-debug-break.o
-                0x000000009d00115c                __exception_handler_break
+                0x000000009d001a34        0xc c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\software-debug-break.o
+                0x000000009d001a34                __exception_handler_break
 
 .text._on_reset
                 0x000000009d0001f8        0x8
@@ -2580,10 +2609,10 @@ LOAD stack
                 0x000000009d0001f8                _on_reset
 
 .text._on_bootstrap
-                0x000000009d001168        0x8
+                0x000000009d001a40        0x8
  .text._on_bootstrap
-                0x000000009d001168        0x8 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-on-bootstrap.o)
-                0x000000009d001168                _on_bootstrap
+                0x000000009d001a40        0x8 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-on-bootstrap.o)
+                0x000000009d001a40                _on_bootstrap
 
 .text%z47       0x0000000000000000        0x0
  .text          0x0000000000000000        0x0 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-simple-tlb-refill-exception-handler.o)
@@ -2622,16 +2651,16 @@ LOAD stack
  .text          0x0000000000000000        0x0 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\libpic32.a(default-bootstrap-exception-handler.o)
 
 .text%z59       0x0000000000000000        0x0
- .text          0x0000000000000000        0x0 C:\Users\Asimov\AppData\Local\Temp\ccWRShP1.o
+ .text          0x0000000000000000        0x0 C:\Users\Asimov\AppData\Local\Temp\ccjsJokx.o
 
 .text%z60       0x0000000000000000        0x0
- .text          0x0000000000000000        0x0 C:\Users\Asimov\AppData\Local\Temp\ccu05tT3.o
+ .text          0x0000000000000000        0x0 C:\Users\Asimov\AppData\Local\Temp\ccIHd7Cv.o
 
 .text%z61       0x0000000000000000        0x0
- .text          0x0000000000000000        0x0 C:\Users\Asimov\AppData\Local\Temp\cc8D5BQd.o
+ .text          0x0000000000000000        0x0 C:\Users\Asimov\AppData\Local\Temp\cctaLUhy.o
 
 .text%z62       0x0000000000000000        0x0
- .text          0x0000000000000000        0x0 C:\Users\Asimov\AppData\Local\Temp\ccEptJ6r.o
+ .text          0x0000000000000000        0x0 C:\Users\Asimov\AppData\Local\Temp\ccggAZfE.o
 
 .text%z63       0x0000000000000000        0x0
  .text          0x0000000000000000        0x0 c:/program files/microchip/xc32/v4.40/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64\software-debug-break.o

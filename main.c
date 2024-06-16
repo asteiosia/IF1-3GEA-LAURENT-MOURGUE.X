@@ -23,7 +23,6 @@
 
 // DEVCFG1
 #pragma config FNOSC = FRCDIV           // Oscillator Selection Bits (Fast RC Osc w/Div-by-N (FRCDIV))
-
 #pragma config DMTINTV = WIN_127_128    // DMT Count Window Interval (Window/Interval value is 127/128 counter value)
 #pragma config FSOSCEN = ON             // Secondary Oscillator Enable (Enable SOSC)
 #pragma config IESO = ON                // Internal/External Switch Over (Enabled)
@@ -67,8 +66,16 @@
 #define SLAVE_ADDR 0x76
 #include <xc.h>
 
-void i2c_master_setup(void) ;
-void i2c_master_start(void) ;
+typedef int16_t BME280_S16_t;
+typedef uint16_t BME280_U16_t;
+typedef int32_t BME280_S32_t;
+typedef uint32_t BME280_U32_t;
+typedef uint8_t BME280_U8_t;
+typedef int8_t BME280_S8_t;
+typedef int64_t BME280_S64_t;
+
+void i2c_master_setup(void);
+void i2c_master_start(void);
 void i2c_master_restart(void);
 void i2c_master_send(unsigned char byte);
 unsigned char i2c_master_recv(void);
@@ -77,107 +84,139 @@ void i2c_master_ack(int val);
 void bme_280_setup(void);
 void lecture_chip_id(void);
 unsigned char lecture(unsigned char adresse);
+void read_compensation_parameters();
+double BME280_compensate_T_double(BME280_S32_t adc_T);
+double BME280_compensate_P_double(BME280_S32_t adc_P);
+double BME280_compensate_H_double(BME280_S32_t adc_H);
 void lec_acc(unsigned char data[]);
 
 int a;
-unsigned char data1 = 0 ;
-unsigned char data2 = 0 ;
-unsigned char data3 = 0 ;
+unsigned char data1 = 0;
+unsigned char data2 = 0;
+unsigned char data3 = 0;
+unsigned char data4 = 0;
+unsigned char data5 = 0;
+unsigned char data6 = 0;
+unsigned char data7 = 0;
+unsigned char data8 = 0;
+// Definition des types
 
+
+
+BME280_U16_t dig_T1;
+BME280_S16_t dig_T2;
+BME280_S16_t dig_T3;
+BME280_U16_t dig_P1;
+BME280_S16_t dig_P2;
+BME280_S16_t dig_P3;
+BME280_S16_t dig_P4;
+BME280_S16_t dig_P5;
+BME280_S16_t dig_P6;
+BME280_S16_t dig_P7;
+BME280_S16_t dig_P8;
+BME280_S16_t dig_P9;
+BME280_U8_t dig_H1;
+BME280_S16_t dig_H2;
+BME280_U8_t dig_H3;
+BME280_S16_t dig_H4;
+BME280_S16_t dig_H5;
+BME280_S8_t dig_H6;
+
+BME280_S32_t t_fine;
 
 void i2c_master_setup(void)
 {
-I2C1BRG = 390; // I2CBRG = [1/(2*Fsck) - PGD]*Pblck - 2
-// Fsck is the freq (1,275 kHz here), PGD = 104 ns and Pblck +1micros // 
+    I2C1BRG = 390; // I2CBRG = [1/(2*Fsck) - PGD]*Pblck - 2
+    // Fsck is the freq (1,275 kHz here), PGD = 104 ns and Pblck +1micros // 
 
-I2C1CONbits.ON = 1; // turn on the I2C1 module
+    I2C1CONbits.ON = 1; // turn on the I2C1 module
 }
 
 // Start a transmission on the I2C bus // fct start
 void i2c_master_start(void)
 {
-I2C1CONbits.SEN = 1; // send the start bit
-while(I2C1CONbits.SEN) { ; } // wait for the start bit to be sent
+    I2C1CONbits.SEN = 1; // send the start bit
+    while (I2C1CONbits.SEN) { ; } // wait for the start bit to be sent
 }
 
 void i2c_master_restart(void) // fct restart
 {
-I2C1CONbits.RSEN = 1; // send a restart
-while(I2C1CONbits.RSEN) { ; } // wait for the restart to clear
+    I2C1CONbits.RSEN = 1; // send a restart
+    while (I2C1CONbits.RSEN) { ; } // wait for the restart to clear
 }
 
 void i2c_master_send(unsigned char byte)
 { // send a byte to slave
-a=0;
-I2C1TRN = byte; // if an address, bit0=0forwrite, 1 for read
-while(I2C1STATbits.TRSTAT)
-{ ;
-} // wait for the transmission to finish
-if(I2C1STATbits.ACKSTAT)
-{ // if this is high, slave has not acknowledged
-a=1;
-}
+    a = 0;
+    I2C1TRN = byte; // if an address, bit0=0 for write, 1 for read
+    while (I2C1STATbits.TRSTAT) { ; } // wait for the transmission to finish
+    if (I2C1STATbits.ACKSTAT) { // if this is high, slave has not acknowledged
+        a = 1;
+    }
 }
 
-unsigned char i2c_master_recv(void)  
+unsigned char i2c_master_recv(void)
 { // receive a byte from the slave
-I2C1CONbits.RCEN = 1; // start receiving data
-while(!I2C1STATbits.RBF) { ; } // wait to receive the data
-return I2C1RCV; // read and return the data
+    I2C1CONbits.RCEN = 1; // start receiving data
+    while (!I2C1STATbits.RBF) { ; } // wait to receive the data
+    return I2C1RCV; // read and return the data
 }
-
 
 void i2c_master_ack(int val)
 { // sends ACK = 0 (slave should send another byte)
-// or NACK = 1 (no more bytes requested from slave)
-I2C1CONbits.ACKDT = val; // store ACK/NACK in ACKDT
-I2C1CONbits.ACKEN = 1; // send ACKDT
-while(I2C1CONbits.ACKEN) { ; } // wait for ACK/NACK to be sent
+    // or NACK = 1 (no more bytes requested from slave)
+    I2C1CONbits.ACKDT = val; // store ACK/NACK in ACKDT
+    I2C1CONbits.ACKEN = 1; // send ACKDT
+    while (I2C1CONbits.ACKEN) { ; } // wait for ACK/NACK to be sent
 }
 
 void i2c_master_stop(void) // fct stop ok
 { // send a STOP:
-I2C1CONbits.PEN = 1; // comm is complete and master relinquishes bus
-while(I2C1CONbits.PEN) { ; } // wait for STOP to complete
+    I2C1CONbits.PEN = 1; // comm is complete and master relinquishes bus
+    while (I2C1CONbits.PEN) { ; } // wait for STOP to complete
 }
 
-void lec_acc(unsigned char data[]) 
+void lec_acc(unsigned char data[])
 {
+    i2c_master_start();
+    i2c_master_send(SLAVE_ADDR << 1); // send the slave address, left shifted by 1
 
-   i2c_master_start();
-        i2c_master_send(SLAVE_ADDR << 1); // send the slave address, left shifted by 1,
-        
-        i2c_master_send(0xFA); // bit 7 of adress register must be @1 for transmitting several bytes
-       // i2c_master_send(master_write1); // send another byte to the slave
-        
-        i2c_master_restart();
-        i2c_master_send((SLAVE_ADDR << 1) | 1); // send slave address, left shifted by 1
+    i2c_master_send(0xF7); // bit 7 of adress register must be @1 for transmitting several bytes
 
-        data1 = i2c_master_recv(); // receive a byte from the bus
-        i2c_master_ack(0); // send ACK (0): master wants another byte!
-        
-        data2 = i2c_master_recv(); // receive a byte from the bus
-        i2c_master_ack(0); // send ACK (0): master wants another byte!
-        
-        data3 = i2c_master_recv(); // receive a byte from the bus
-        //i2c_master_ack(0); // send ACK (0): master wants another byte!
-        
-        //data[3] = i2c_master_recv(); // receive a byte from the bus
-        //i2c_master_ack(0); // send ACK (0): master wants another byte!
-        
-        //data[4]= i2c_master_recv(); // receive a byte from the bus
-        //i2c_master_ack(0); // send ACK (0): master wants another byte!
-        
-        //data[5]= i2c_master_recv(); // receive a byte from the bus
-     
-        i2c_master_ack(1); // send NACK (1): master needs no more bytes
-        i2c_master_stop(); // send STOP: end transmission, give up bus  
+    i2c_master_restart();
+    i2c_master_send((SLAVE_ADDR << 1) | 1); // send slave address, left shifted by 1
+
+    data1 = i2c_master_recv(); // receive a byte from the bus
+    i2c_master_ack(0); // send ACK (0): master wants another byte!
+
+    data2 = i2c_master_recv(); // receive a byte from the bus
+    i2c_master_ack(0); // send ACK (0): master wants another byte!
+
+    data3 = i2c_master_recv(); // receive a byte from the bus
+    i2c_master_ack(0); // send ACK (0): master wants another byte!
+
+    data4 = i2c_master_recv(); // receive a byte from the bus
+    i2c_master_ack(0); // send ACK (0): master wants another byte!
+
+    data5 = i2c_master_recv(); // receive a byte from the bus
+    i2c_master_ack(0); // send ACK (0): master wants another byte!
+
+    data6 = i2c_master_recv(); // receive a byte from the bus
+    i2c_master_ack(0); // send ACK (0): master wants another byte!
+    
+    data7 = i2c_master_recv(); // receive a byte from the bus
+    i2c_master_ack(0); // send ACK (0): master wants another byte!
+    
+    data8 = i2c_master_recv(); // receive a byte from the bus
+
+    i2c_master_ack(1); // send NACK (1): master needs no more bytes
+    i2c_master_stop(); // send STOP: end transmission, give up bus
 }
 
-void bme_280_setup(void){
-    
+void bme_280_setup(void)
+{
     i2c_master_start();
-    i2c_master_send(SLAVE_ADDR<<1);
+    i2c_master_send(SLAVE_ADDR << 1);
     i2c_master_send(0xF4);
     i2c_master_send(0b10101011); // osrs_t -> 101 (16) | osrs_p -> 010 (2) | Mode -> 11 (Normal)
     i2c_master_send(0xF5);
@@ -185,25 +224,26 @@ void bme_280_setup(void){
     i2c_master_stop();
 }
 
-void lecture_chip_id(void){
+void lecture_chip_id(void)
+{
     unsigned char id = 0;
-    
+
     i2c_master_start();
-    i2c_master_send(SLAVE_ADDR<<1);
+    i2c_master_send(SLAVE_ADDR << 1);
     i2c_master_send(0xD0);
-    
+
     i2c_master_restart(); // Ptet Start ?
-    i2c_master_send((SLAVE_ADDR<<1)|1);
+    i2c_master_send((SLAVE_ADDR << 1) | 1);
     id = i2c_master_recv();
     i2c_master_ack(1);
     i2c_master_stop();
-    
 }
 
-unsigned char lecture(unsigned char adresse){
-    unsigned char data = 0 ;
+unsigned char lecture(unsigned char adresse)
+{
+    unsigned char data = 0;
     i2c_master_start();
-    i2c_master_send(SLAVE_ADDR << 1); // send the slave address, left shifted by 1,
+    i2c_master_send(SLAVE_ADDR << 1); // send the slave address, left shifted by 1
     i2c_master_send(adresse); // bit 7 of adress register must be @1 for transmitting several bytes
     i2c_master_restart();
     i2c_master_send((SLAVE_ADDR << 1) | 1); // send slave address, left shifted by 1 
@@ -213,54 +253,109 @@ unsigned char lecture(unsigned char adresse){
     return data;
 }
 
-long BME280_compensate(long adc_T) {
-        long var1, var2, T;
-    unsigned short dig_T1 = 0, t_fine = 0;
-    signed short dig_T2 = 0, dig_T3 = 0;
-    unsigned char dig_T_0 = 0;
-    unsigned char dig_T_8 = 0;
+/*--------------------------------------------------------------------*/
 
-    dig_T_0 = lecture(0x88);
-    dig_T_8 = lecture(0x89);
-    dig_T1 = (dig_T_8 << 8) | dig_T_0;
 
-    dig_T_0 = lecture(0x8A);
-    dig_T_8 = lecture(0x8B);
-    dig_T2 = (dig_T_8 << 8) | dig_T_0;
 
-    dig_T_0 = lecture(0x8C);
-    dig_T_8 = lecture(0x8D);
-    dig_T3 = (dig_T_8 << 8) | dig_T_0;
 
-    var1 = ((((adc_T >> 3) - ((long)dig_T1 << 1))) * ((long)dig_T2)) >> 11;
-    var2 = (((((adc_T >> 4) - ((long)dig_T1)) * ((adc_T >> 4) - ((long)dig_T1))) >> 12) * ((long)dig_T3)) >> 14;
-    t_fine = var1 + var2;
-    T = (t_fine * 5 + 128) >> 8;
-    return T; 
+void read_compensation_parameters() {
+    dig_T1 = (lecture(0x89) << 8) | lecture(0x88);
+    dig_T2 = (lecture(0x8B) << 8) | lecture(0x8A);
+    dig_T3 = (lecture(0x8D) << 8) | lecture(0x8C);
+    dig_P1 = (lecture(0x8F) << 8) | lecture(0x8E);
+    dig_P2 = (lecture(0x91) << 8) | lecture(0x90);
+    dig_P3 = (lecture(0x93) << 8) | lecture(0x92);
+    dig_P4 = (lecture(0x95) << 8) | lecture(0x94);
+    dig_P5 = (lecture(0x97) << 8) | lecture(0x96);
+    dig_P6 = (lecture(0x99) << 8) | lecture(0x98);
+    dig_P7 = (lecture(0x9B) << 8) | lecture(0x9A);
+    dig_P8 = (lecture(0x9D) << 8) | lecture(0x9C);
+    dig_P9 = (lecture(0x9F) << 8) | lecture(0x9E);
+    dig_H1 = lecture(0xA1);
+    dig_H2 = (lecture(0xE2) << 8) | lecture(0xE1);
+    dig_H3 = lecture(0xE3);
+    dig_H4 = (lecture(0xE4) << 4) | (lecture(0xE5) & 0x0F);
+    dig_H5 = (lecture(0xE6) << 4) | (lecture(0xE5) >> 4);
+    dig_H6 = (int8_t)lecture(0xE7);
 }
 
-void main ()
-{
+double BME280_compensate_T_double(BME280_S32_t adc_T) {
+    double var1, var2, T;
+    var1 = (((double)adc_T)/16384.0 - ((double)dig_T1)/1024.0) * ((double)dig_T2);
+    var2 = ((((double)adc_T)/131072.0 - ((double)dig_T1)/8192.0) * (((double)adc_T)/131072.0 - ((double) dig_T1)/8192.0)) * ((double)dig_T3);
+    t_fine = (BME280_S32_t)(var1 + var2);
+        // Coefficients pour l'équation linéaire
+    double a = 0.0007;
+    double b = -82;
+    // Calcul de la température compensée
+    T = a * (var1 + var2) + b;
+    return T;
+}
 
-TRISDbits.TRISD14 = 0 ; 
-LATDbits.LATD14 = 0 ;
-unsigned char master_write0 = 0x0F; // first byte that master writes
-unsigned char master_read0 =0x00;// byte received
-unsigned char data[8] = {0} ;
-unsigned char pressure = 0;
-int temperature = 0;
-
-i2c_master_setup();
-
-bme_280_setup();
-lecture_chip_id();
-
-while(1)
-    {  
-    lec_acc(data);
-    long raw_temp = ((unsigned long)data1 << 12) | ((unsigned long)data2 << 4) | ((data3 >> 4) & 0x0F);
-    temperature = BME280_compensate(raw_temp);
+double BME280_compensate_P_double(BME280_S32_t adc_P) {
+    double var1, var2, p;
+    var1 = ((double)t_fine/2.0) - 64000.0;
+    var2 = var1 * var1 * ((double)dig_P6) / 32768.0;
+    var2 = var2 + var1 * ((double)dig_P5) * 2.0;
+    var2 = (var2/4.0)+(((double)dig_P4) * 65536.0);
+    var1 = (((double)dig_P3) * var1 * var1 / 524288.0 + ((double)dig_P2) * var1) / 524288.0;
+    var1 = (1.0 + var1 / 32768.0)*((double)dig_P1);
+    if (var1 == 0.0) {
+        return 0; // éviter une division par zéro
     }
+    p = 1048576.0 - (double)adc_P;
+    p = (p - (var2 / 4096.0)) * 6250.0 / var1;
+    var1 = ((double)dig_P9) * p * p / 2147483648.0;
+    var2 = p * ((double)dig_P8) / 32768.0;
+    p = p + ((var1 + var2 + ((double)dig_P7)) / 16.0) ;
+    return p;
+}
 
-} 
+double BME280_compensate_H_double(BME280_S32_t adc_H) {
+    double var_H = 0;
+    var_H = (((double)t_fine) - 76800.0);
+    var_H = (adc_H - (((double)dig_H4) * 64.0 + ((double)dig_H5) / 16384.0 * var_H)) * (((double)dig_H2) / 65536.0 * (1.0 + ((double)dig_H6) / 67108864.0 * var_H * (1.0 + ((double)dig_H3) / 67108864.0 * var_H)));
+    var_H = var_H * (1.0 - ((double)dig_H1) * var_H / 524288.0);
+    
+    double a = 5.3435;
+    double b = -318.6;
+    // Calcul de la température compensée
+    var_H = a * (var_H) + b;
+    var_H = var_H*100;
+    if (var_H > 100.0) var_H = 100.0;
+    else if (var_H < 0.0) var_H = 0.0;
+    return var_H;
+}
 
+/*--------------------------------------------------------------------*/
+
+
+
+void main(void)
+{
+    TRISDbits.TRISD14 = 0;
+    LATDbits.LATD14 = 0;
+    unsigned char master_write0 = 0x0F; // first byte that master writes
+    unsigned char master_read0 = 0x00; // byte received
+    double temperature = 0;
+    double pressure = 0;
+    double humidite = 0;
+
+    i2c_master_setup();
+    bme_280_setup();
+    //lecture_chip_id();
+
+    unsigned char data[6];
+
+    while (1)
+    {
+        lec_acc(data);
+        BME280_S32_t raw_temp = ((unsigned long)data4 << 12) | ((unsigned long)data5 << 4) | ((data6 >> 4) & 0x0F);
+        BME280_S32_t raw_press = ((unsigned long)data1<< 12) | ((unsigned long)data2 << 4) | ((data3 >> 4) & 0x0F);
+        BME280_S32_t raw_hum = ((unsigned long)data7 << 8) | ((unsigned long)data8);
+        read_compensation_parameters();
+        temperature = BME280_compensate_T_double(raw_temp);
+        pressure = (BME280_compensate_P_double(raw_press)/100) +14;
+        humidite = BME280_compensate_H_double(raw_hum);
+    }
+}

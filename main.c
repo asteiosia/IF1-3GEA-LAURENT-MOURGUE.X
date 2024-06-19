@@ -96,6 +96,7 @@ void UART_printChar(char c);
 char UART_getChar();
 void UART_getString(char *string, int length);
 void doubleToString(double value, char* buffer, int precision);
+void configurer_Timer1() ;
 
 int a;
 unsigned char data1 = 0;
@@ -106,6 +107,8 @@ unsigned char data5 = 0;
 unsigned char data6 = 0;
 unsigned char data7 = 0;
 unsigned char data8 = 0;
+double WatchT = 0;
+double WatchH = 0;
 // Definition des types
 
 void UART_init() {
@@ -366,9 +369,10 @@ double BME280_compensate_T_double(BME280_S32_t adc_T) {
     var2 = ((((double)adc_T)/131072.0 - ((double)dig_T1)/8192.0) * (((double)adc_T)/131072.0 - ((double) dig_T1)/8192.0)) * ((double)dig_T3);
     t_fine = (BME280_S32_t)(var1 + var2);
         // Coefficients pour l'équation linéaire
-    double a = 0.0007;
-    double b = -82;
+    double a = 0.00104;
+    double b = -152.36;
     // Calcul de la température compensée
+    WatchT = (var1 + var2);
     T = a * (var1 + var2) + b;
     return T;
 }
@@ -398,11 +402,11 @@ double BME280_compensate_H_double(BME280_S32_t adc_H) {
     var_H = (adc_H - (((double)dig_H4) * 64.0 + ((double)dig_H5) / 16384.0 * var_H)) * (((double)dig_H2) / 65536.0 * (1.0 + ((double)dig_H6) / 67108864.0 * var_H * (1.0 + ((double)dig_H3) / 67108864.0 * var_H)));
     var_H = var_H * (1.0 - ((double)dig_H1) * var_H / 524288.0);
     
-    double a = 5.3435;
-    double b = -318.6;
+    WatchH = var_H ;
+    double a = 1400;
+    double b = -83718;
     // Calcul de la température compensée
     var_H = a * (var_H) + b;
-    var_H = var_H*100;
     if (var_H > 100.0) var_H = 100.0;
     else if (var_H < 0.0) var_H = 0.0;
     return var_H;
@@ -499,6 +503,11 @@ void main(void)
         UART_printString(buffer);
         sprintf(buffer, "Humidite: %.3f \n", humidite);
         UART_printString(buffer);
+        sprintf(buffer, "Temp Debug : %f \n", WatchT);
+        UART_printString(buffer);
+        sprintf(buffer, "Hum Debug : %f \n", WatchH);
+        UART_printString(buffer);
+        
         UART_printString("\r\n\n");
         
         IFS0bits.T1IF = 0; // r -initialisation du drapeau li  au timer1

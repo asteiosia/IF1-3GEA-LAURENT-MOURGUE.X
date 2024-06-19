@@ -1372,8 +1372,6 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="1d000000-1d003fff"/>
-        <property key="programmerToGoFilePath"
-                  value="C:/Users/Asimov/MPLABXProjects/IF1-3GEA-LAURENT-MOURGUE.X/debug/default/IF1-3GEA-LAURENT-MOURGUE_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>

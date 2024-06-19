@@ -65,6 +65,8 @@
 
 #define SLAVE_ADDR 0x76
 #include <xc.h>
+#include <stdio.h> // Pour sprintf
+
 
 typedef int16_t BME280_S16_t;
 typedef uint16_t BME280_U16_t;
@@ -89,6 +91,11 @@ double BME280_compensate_T_double(BME280_S32_t adc_T);
 double BME280_compensate_P_double(BME280_S32_t adc_P);
 double BME280_compensate_H_double(BME280_S32_t adc_H);
 void lec_acc(unsigned char data[]);
+void UART_init();
+void UART_printChar(char c);
+char UART_getChar();
+void UART_getString(char *string, int length);
+void doubleToString(double value, char* buffer, int precision);
 
 int a;
 unsigned char data1 = 0;
@@ -101,6 +108,79 @@ unsigned char data7 = 0;
 unsigned char data8 = 0;
 // Definition des types
 
+void UART_init() {
+    U2MODEbits.BRGH = 0;                // Baud Rate = 9600
+    U2BRG = 25;
+    
+    U2MODEbits.SIDL = 0;                // Continue operation in SLEEP mode
+    U2MODEbits.ABAUD = 0;
+    U2MODEbits.IREN = 0;                // IrDA is disabled
+    U2MODEbits.RTSMD = 1;               // U1RTS pin is in simplex mode
+    U2MODEbits.UEN = 0b00;              // U1TX, U1RX are enabled
+    U2MODEbits.WAKE = 1;                // Wake-up enabled
+    U2MODEbits.LPBACK = 0;              // Loopback mode is disabled
+    U2MODEbits.RXINV = 0;               // U1RX IDLE state is '1'
+    U2MODEbits.PDSEL = 0b00;            // 8-bit data, no parity
+    U2MODEbits.STSEL = 0;               // 1 stop bit
+    U2STAbits.UTXINV = 0;               // U6TX IDLE state is '1'
+    U2MODEbits.ON = 1;                  // UART6U is enabled
+    U2STAbits.URXEN = 1;                // UART6 receiver is enabled
+    U2STAbits.UTXEN = 1;                // UART6 transmitter is enabled
+
+    U2RXR = 12;     // RE9 = U2RX
+    RPG9R = 2;      // RG9 = U2TX
+    
+    TRISEbits.TRISE9 = 1; // input
+    TRISGbits.TRISG9 = 0; // output
+}
+   
+void UART_printChar(char c) {
+    U2STAbits.UTXEN = 1;                // Make sure transmitter is enabled
+    // while(CTS)                       // Optional CTS use
+    while(U2STAbits.UTXBF);             // Wait while buffer is full
+    U2TXREG = c;                        // Transmit character
+}
+ 
+void UART_printString(char *string) {
+    U2STAbits.UTXEN = 1;                // Make sure transmitter is enabled
+    
+    while(*string) {
+        while(U2STAbits.UTXBF);         // Wait while buffer is full
+        U2TXREG = *string;              // Transmit one character
+        string++;                       // Go to next character in string
+    }
+}
+  
+char UART_getChar() {
+    //PORTDbits.RD15 = 0;                // Optional RTS use
+    while(!U2STAbits.URXDA);             // Wait for information to be received
+    //PORTDbits.RD15 = 1;
+    return U2RXREG;                      // Return received character
+}
+ 
+void UART_getString(char *string, int length) {  
+    int count = length;
+    
+    do {
+        *string = UART_getChar();               // Read in character
+        //SendChar(*string);                  // Echo character
+        
+        if(*string == 0x7F && count>length) { // Backspace conditional
+            length++;
+            string--;
+            continue;
+        }
+        
+        if(*string == '\r')                 // End reading if enter is pressed
+            break;
+        
+        string++;
+        length--;
+        
+    } while(length>1);
+    
+    *string = '\0';                         // Add null terminator
+}
 
 
 BME280_U16_t dig_T1;
@@ -212,6 +292,7 @@ void lec_acc(unsigned char data[])
     i2c_master_ack(1); // send NACK (1): master needs no more bytes
     i2c_master_stop(); // send STOP: end transmission, give up bus
 }
+
 
 void bme_280_setup(void)
 {
@@ -328,13 +409,65 @@ double BME280_compensate_H_double(BME280_S32_t adc_H) {
 }
 
 /*--------------------------------------------------------------------*/
+void doubleToString(double value, char* buffer, int precision) {
+    int intPart = (int)value; // Partie entière
+    double fracPart = value - intPart; // Partie fractionnaire
+    int fracAsInt;
+    int i;
 
+    // Convertir la partie entière en chaîne
+    i = 0;
+    if (intPart == 0) {
+        buffer[i++] = '0';
+    } else {
+        if (intPart < 0) {
+            buffer[i++] = '-';
+            intPart = -intPart;
+        }
+        int digits[10]; // Temporaire pour stocker les chiffres
+        int j = 0;
+        while (intPart > 0) {
+            digits[j++] = intPart % 10;
+            intPart /= 10;
+        }
+        while (j > 0) {
+            buffer[i++] = '0' + digits[--j];
+        }
+    }
+
+    buffer[i++] = '.'; // Ajouter le point décimal
+
+    // Convertir la partie fractionnaire en chaîne
+    fracPart *= 10;
+    while (precision > 0) {
+        fracAsInt = (int)fracPart;
+        buffer[i++] = '0' + fracAsInt;
+        fracPart -= fracAsInt;
+        fracPart *= 10;
+        precision--;
+    }
+
+    buffer[i] = '\0'; // Terminer la chaîne
+}
+/*--------------------------------------------------------------------*/
+void configurer_Timer1() 
+{
+    T1CONbits.TON = 0;      // D sactiver le Timer1 pendant la configuration
+    T1CONbits.TCS = 0;      // S lectionner l'horloge interne comme source d'horloge
+    T1CONbits.TCKPS = 0b11; // Diviseur de fr quence 256
+    PR1 = 249999;            // P riode de 256*5860 cycle d'horloge 
+    TMR1 = 0;               // R initialiser le compteur Timer1
+    T1CONbits.TON = 1;      // Activer le Timer1
+}
+/*--------------------------------------------------------------------*/
 
 
 void main(void)
 {
+    configurer_Timer1();
     TRISDbits.TRISD14 = 0;
     LATDbits.LATD14 = 0;
+    char buffer[50];
     unsigned char master_write0 = 0x0F; // first byte that master writes
     unsigned char master_read0 = 0x00; // byte received
     double temperature = 0;
@@ -344,6 +477,7 @@ void main(void)
     i2c_master_setup();
     bme_280_setup();
     //lecture_chip_id();
+    UART_init();
 
     unsigned char data[6];
 
@@ -357,5 +491,17 @@ void main(void)
         temperature = BME280_compensate_T_double(raw_temp);
         pressure = (BME280_compensate_P_double(raw_press)/100) +14;
         humidite = BME280_compensate_H_double(raw_hum);
+        
+            // Convertir la valeur de la variable double en chaîne de caractères
+        sprintf(buffer, "Temperature: %.3f \n", temperature);
+        UART_printString(buffer);
+        sprintf(buffer, "Pressure: %.3f \n", pressure);
+        UART_printString(buffer);
+        sprintf(buffer, "Humidite: %.3f \n", humidite);
+        UART_printString(buffer);
+        UART_printString("\r\n\n");
+        
+        IFS0bits.T1IF = 0; // r -initialisation du drapeau li  au timer1
+        while ( IFS0bits.T1IF == 0 ); // attente de la lev e du drapeau
     }
 }
